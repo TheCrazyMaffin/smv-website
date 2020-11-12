@@ -5,7 +5,10 @@ Use `{? code ?}` to embed ruby code.
 
 Introduce variables to a file by adding them in between the two `---` marks. (Thats called "Front Matter") Access them using `page.*name*`.
 
-## Global variables
+# Filters
+When inserting variables into e.g. layouts (You'll learn more about this later) you will use `{{ foobar }}`. You can apply filters before inserting this variable. For example a posts content will automatically be markdownified when using `{{ content }}`. If you were to markdownify any other variable like `collectionElement.content` you need to use filters like this. `{{ variable | filter}}` (Here: `{{ collectionElement.content | markdownify }}`)
+
+## Variables
 | Variable | Property | Description |
 | --- | --- | --- |
 | site | | Side wide information and config from `_config.yml` |
@@ -39,14 +42,50 @@ Introduce variables to a file by adding them in between the two `---` marks. (Th
 | layout | | Layout specific information. Front matter variables of the layout file will be in this variable. |
 | content | | Content for layout files. Undefined in posts or pages |
 
-
 # _layouts
 This folder holds all layouts available on the page. The layout to be used on a page is defined by the `layout` variable on said page.
 
 The `{{ content }}` variable in a layout file will later be replaced by the content of the page it is used on.
 
+Layouts can inherit other layouts. Defining `layout` in the front matter of a layout file does work.
+
 # _includes
 Add snippets from this folder using `{% include foobar.html %}`
+
+# _data
+JSON, YAML or CSV files may live here. Access it's contents using `site.data.*NAME*`
+
+# _sass
+Jekyll uses [SASS](https://sass-lang.com/guide). Add empty front matter at the top of each file so that Jekyll knows it needs to process the file. 
+
+You may use `@import foobar` in a `.scss` file to import the contents of the file `_sass/foobar.scss`.
+
+`.scss` files with the empty front matter at the top will be processed into `.css` files an can be accessed at their original location.
+
+# _posts
+The filename of a post will include the date, the name and an extension. (e.g. `2020-11-12-xmas.md` or in general `yyyy-mm-dd-title.xy`)
+
+Posts also require front matter. You will at least need to include a `layout` variable. You may use other variables such as `author` or similar to use in the layout.
+
+# Collections
+Each collection needs to be defined in the `_config.yml` using
+```
+collections:
+    foobar:
+```
+and needs a folder in the root of the project named `_foobar` (matching the name of the collection)
+
+`site.*NAME*` (Here `site.foobar`) will hold all pages put into the collections folder. One object of the collection will have the property `content` aswell as all the variables defined in the front matter.
+
+If
+```
+collections:
+    foobar:
+        output: true
+```
+is set for collections they will have their own page which can be reached by using the link `{{ foobar.url }}` (`foobar` being the collection name)
+
+
 
 To be continued here https://jekyllrb.com/docs/step-by-step/09-collections/
 
