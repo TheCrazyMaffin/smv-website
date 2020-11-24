@@ -1,0 +1,21 @@
+<footer class="site-footer h-card">
+  <data class="u-url" href="{{ "/" | relative_url }}"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p>
+          <b>Wann?</b> Jeden Mittwoch in der 7. Stunden<br />
+          <b>Wo?</b> Im Raum 313 oder im SMV-Raum 217
+        </p>
+      </div>
+      <div class="footer-col">
+        <a rel="me" href="https://www.facebook.com/{{ site.social_links.facebook | cgi_escape | escape }}" title="{{ site.social_links.facebook | escape }}"><svg class="svg-icon grey"><use xlink:href="{{ '/assets/images/minima-social-icons.svg#facebook' | relative_url }}"></use></svg>{{ site.social_links.facebook }}</a><br/>
+        <a rel="me" href="https://www.instagram.com/{{ site.social_links.instagram | cgi_escape | escape }}" title="{{ site.social_links.instagram | escape }}"><svg class="svg-icon grey"><use xlink:href="{{ '/assets/images/minima-social-icons.svg#instagram' | relative_url }}"></use></svg>{{ site.social_links.instagram }}</a><br/>
+        <a rel="me" href="mailto:{{ site.social_links.mail | cgi_escape | escape }}" title="{{ site.social_links.mail | escape }}"><span style="vertical-align: middle;" class="material-icons grey">mail_outline</span>{{ site.social_links.mail }}</a><br/>
+      </div>
+    </div>
+
+  </div>
+</footer>

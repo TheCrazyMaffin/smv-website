@@ -1,0 +1,18 @@
+# Needed for the calender. Renews the building date every day
+name: Daily-Rebuild
+
+on:
+  schedule:
+    - cron:  '0 2 * * *' # Runs every day at 2am
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger GitHub pages rebuild
+        run: |
+          curl --fail --request POST \
+            --url https://api.github.com/repos/TheCrazyMaffin/smv-website/pages/builds \
+            --header "Authorization: Bearer $USER_TOKEN"
+        env:
+          USER_TOKEN: ${{ secrets.USER_TOKEN }}

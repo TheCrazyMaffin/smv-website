@@ -1,0 +1,15 @@
+#theme: jekyll-theme-cayman #Might use later
+exclude: [README.md, LICENSE, Gemfile.lock, Gemfile]
+minima:
+  skin: classic #dark
+
+collections:
+  events:
+    output: true
+  members:
+
+title: SMV Ellental
+social_links:
+  instagram: smv_ellental
+  facebook: smvellental
+  mail: smv@ellentalgymnasien.de

@@ -85,6 +85,56 @@ collections:
 ```
 is set for collections they will have their own page which can be reached by using the link `{{ foobar.url }}` (`foobar` being the collection name)
 
+# Defaults
+
+You can set defaults in `_config.yml`. Just like this:
+```
+defaults:
+    - scope:
+        path: ""
+        type: "collectionName"
+    values:
+        layout: "someLayoutToBeUsed"
+    - scope:
+        path: ""
+        type: "posts"
+    values:
+        layout: "post"
+    - scope:
+        path: ""
+    values:
+        layout: "default"
+```
+
+# Debugging
+Start a debugging server using
+```
+bundle exec jekyll serve --live
+```
+
+## Problems with eventmachine?
+```
+gem uninstall eventmachine
+gem install eventmachine --platform ruby
+```
+
+## Material Icons
+1. Look them up [here](https://material.io/resources/icons/)
+2. Copy the `code` and paste it.
+
+## Member cards
+To get listed on the member page simply do the following
+1. Put a image of yourself in `assets/images/members` and name it `firstname_lastname.png` while png may aswell be any other extension modern browsers can show. Remember the filename
+2. Create a file named `lastname_firstname.md` in the folder `_members`
+3. Put this in the file
+```
+---
+name: Firstname Lastname
+position: Verbindungslehrer | Schülersprecher | Mitglied <-- Pick one of the three and remove this comment and all the non applicable choices.
+image: lastname_firstname.png <-- Put the filename of your image from step 1 here and remvoe this comment.
+---
+Write something about you. Do it and remove this comment.
+```
 
 
 To be continued here https://jekyllrb.com/docs/step-by-step/09-collections/

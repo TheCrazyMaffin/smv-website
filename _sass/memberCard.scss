@@ -1,0 +1,16 @@
+.memberCard{
+  display: flex;
+  flex-wrap: nowrap; //Looks meh with wrap.
+  align-items: center;
+}
+
+.memberCard img {
+  border-radius: 15px;
+}
+
+.memberCard p {
+  padding-left: 10px;
+}
+.memberCard span {
+  width: 80%;
+}

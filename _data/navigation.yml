@@ -1,0 +1,10 @@
+- name: Aktuelles
+  link: /aktuelles.html
+- name: Kalender
+  link: /kalender.html
+- name: Protokolle
+  link: /protokolle.html
+- name: Galerie
+  link: /galerie.html
+- name: Mitglieder
+  link: /mitglieder.html
