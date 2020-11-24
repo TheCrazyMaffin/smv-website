@@ -10,7 +10,8 @@ css:
 ## Schülersprecher
 {% for member in SchSp %}
 <div class="memberCard">
-    <img src="/assets/images/members/{{member.image}}" style="height: 100px;">
+    {% capture imgUrl %}/assets/images/members/{{member.image}}{% endcapture %}
+    <img src="{{ imgUrl | relative_url }}" style="height: 100px;">
     <span>
     <p><b>{{member.name}}</b></p>
     {{ member.content }}
@@ -20,7 +21,8 @@ css:
 ## Verbindungslehrer
 {% for member in VerLe %}
 <div class="memberCard">
-    <img src="/assets/images/members/{{member.image}}" style="height: 100px;">
+    {% capture imgUrl %}/assets/images/members/{{member.image}}{% endcapture %}
+    <img src="{{ imgUrl | relative_url }}" style="height: 100px;">
     <span>
     <p><b>{{member.name}}</b></p>
     {{ member.content }}
@@ -30,7 +32,8 @@ css:
 ## Mitglieder
 {% for member in Mem %}
 <div class="memberCard">
-    <img src="/assets/images/members/{{member.image}}" style="height: 100px;">
+    {% capture imgUrl %}/assets/images/members/{{member.image}}{% endcapture %}
+    <img src="{{ imgUrl | relative_url }}" style="height: 100px;">
     <span>
     <p><b>{{member.name}}</b></p>
     {{ member.content }}
