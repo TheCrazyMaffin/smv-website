@@ -1,0 +1,22 @@
+---
+layout: default
+title: Kalender
+---
+<h1>Das kannst Du dieses Schuljahr erwarten</h1>
+{% assign buildTimestamp = site.time | date: "%s" %}
+{% assign lastMonth = 0 %}
+{% for event in site.events %}
+    {% assign currentMonth = event.date | date: "%m" | round %}
+    {% if lastMonth < currentMonth %}
+    <hr>
+    {% endif %}
+    {% assign lastMonth = currentMonth %}
+    {% assign eventTimestamp = event.date | date: "%s" %}
+    {% if eventTimestamp > buildTimestamp %}
+    <details>
+        <summary class="text-m">{{ event.date | date: "%d.%m.%Y"}} - <span class="bold">{{ event.title }}</span></summary>
+        {{ event.excerpt }}
+        <a href="{{ event.url }}">Weiterlesen...</a>
+    </details>        
+    {% endif %}
+{% endfor %}

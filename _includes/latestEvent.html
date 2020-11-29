@@ -1,0 +1,10 @@
+{% assign buildTimestamp = site.time | date: "%s" %}
+{% for event in site.events %}
+    {% assign eventTimestamp = event.date | date: "%s" %}
+    {% if eventTimestamp > buildTimestamp %}
+        <h1>Demnächst: <a href="{{ event.url }}">{{ event.title }}</a></h1>
+        <span class="bold">am {{ event.date | date: "%d.%m.%Y"}}</span>
+        {{ event.excerpt }}
+    {% break %}
+    {% endif %}
+{% endfor %}

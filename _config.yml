@@ -1,5 +1,6 @@
 #theme: jekyll-theme-cayman #Might use later
 exclude: [README.md, LICENSE, Gemfile.lock, Gemfile]
+future: true
 minima:
   skin: classic #dark
 

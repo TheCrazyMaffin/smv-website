@@ -136,6 +136,17 @@ image: lastname_firstname.png <-- Put the filename of your image from step 1 her
 Write something about you. Do it and remove this comment.
 ```
 
+## Events
+**Template:**
+```
+---
+title: TITLE HERE
+date:  yyyy-mm-dd
+layout: event
+---
+First paragraph should be relatively short. This is what will be displayed on the front page.
+```
+Name the file so that people recognize it later. The first paragraph is displayed on the front page so make it short and with alot of information
 
 To be continued here https://jekyllrb.com/docs/step-by-step/09-collections/
 
