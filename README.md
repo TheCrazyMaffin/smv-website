@@ -148,6 +148,12 @@ First paragraph should be relatively short. This is what will be displayed on th
 ```
 Name the file so that people recognize it later. The first paragraph is displayed on the front page so make it short and with alot of information
 
+## Galerie
+Just place image files in `/gallery/`. Done.
+
+
+
+
 To be continued here https://jekyllrb.com/docs/step-by-step/09-collections/
 
 and here https://github.com/pages-themes/cayman/blob/master/_layouts/default.html

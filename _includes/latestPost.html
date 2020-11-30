@@ -1,0 +1,5 @@
+
+{% assign post = site.posts | first%}
+<h1>Aktuell: <a href="{{ post.url }}">{{ post.title }}</a></h1>
+<span class="bold">vom {{ post.date | date: "%d.%m.%Y"}}</span>
+{{ post.excerpt }}

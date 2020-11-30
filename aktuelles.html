@@ -1,0 +1,18 @@
+---
+layout: default
+title: Aktuelles
+---
+<h1>Das ist dieses Schuljahr schon passiert</h1>
+{% assign lastPostMonth = 13 %}
+{% for post in site.posts %}
+    {% assign currentPostMonth = post.date | date: "%m" | round %}
+    {% if lastPostMonth > currentPostMonth or lastPostMonth == 1 and currentMonth != 1 %}
+    <hr>
+    {% endif %}
+    {% assign lastPostMonth = currentPostMonth %}
+    <details>
+        <summary class="text-m"><span class="bold">{{ post.title }}</span> {{ post.date | date: "%d.%m.%Y" }}</summary>
+        {{ post.excerpt }}
+        <a href=".{{ post.url }}">Weiterlesen...</a>
+    </details>        
+{% endfor %}
