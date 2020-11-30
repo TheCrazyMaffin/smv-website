@@ -6,17 +6,17 @@ title: Kalender
 {% assign buildTimestamp = site.time | date: "%s" %}
 {% assign lastMonth = 0 %}
 {% for event in site.events %}
+    {% assign eventTimestamp = event.date | date: "%s" %}
+    {% if eventTimestamp > buildTimestamp %}
     {% assign currentMonth = event.date | date: "%m" | round %}
-    {% if lastMonth < currentMonth %}
+    {% if lastMonth < currentMonth or lastMonth == 12 and currentMonth != 12 %}
     <hr>
     {% endif %}
     {% assign lastMonth = currentMonth %}
-    {% assign eventTimestamp = event.date | date: "%s" %}
-    {% if eventTimestamp > buildTimestamp %}
     <details>
         <summary class="text-m">{{ event.date | date: "%d.%m.%Y"}} - <span class="bold">{{ event.title }}</span></summary>
         {{ event.excerpt }}
-        <a href="{{ event.url }}">Weiterlesen...</a>
+        <a href=".{{ event.url }}">Weiterlesen...</a>
     </details>        
     {% endif %}
 {% endfor %}
