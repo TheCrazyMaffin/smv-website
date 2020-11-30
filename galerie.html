@@ -6,7 +6,7 @@ title: Galerie
     {% for image in site.static_files %}
         {% assign pathStart = image.path | slice: 0,8 %}
         {% if pathStart == "/gallery" %}
-            <figure><img loading=lazy class="mpadding galh" src="{{ image.path }}"></figure>
+            <figure><img loading=lazy class="mpadding galh" src=".{{ image.path }}"></figure>
         {% endif %}
     {% endfor %}
 </div>
