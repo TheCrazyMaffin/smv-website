@@ -3,7 +3,7 @@
     {% assign eventTimestamp = event.date | date: "%s" | plus:0 %}
     {% assign eventTimestampPlusOneDay = eventTimestamp + 86400 %}
     {% if eventTimestampPlusOneDay > buildTimestamp %}
-        <h1>{% if eventTimestamp > buildTimestamp - 14400 and eventTimestamp < buildTimestamp + 86400 %}Heute:{% else %}Demnächst:{% endif %} <a href="{{ event.url }}">{{ event.title }}</a></h1>
+        <h1>{% if eventTimestamp > buildTimestamp - 14400 and eventTimestamp < buildTimestamp + 86400 %}Heute:{% else %}Demnächst:{% endif %} <a href=".{{ event.url }}">{{ event.title }}</a></h1>
         <span class="bold">am {{ event.date | date: "%d.%m.%Y"}}</span>
         {{ event.excerpt }}
     {% break %}
