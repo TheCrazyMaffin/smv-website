@@ -8,6 +8,7 @@ collections:
   events:
     output: true
   members:
+  records:
 
 title: SMV Ellental
 social_links:
