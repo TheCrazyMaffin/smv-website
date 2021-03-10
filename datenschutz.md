@@ -39,15 +39,12 @@ Werden personenbezogene Daten an ein Drittland oder an eine internationale Organ
 ## Erhebung und Zweck personenbezogener Daten bei Besuch unserer Webseite
 ### Log Daten
 Bei der bloß informatorischen Nutzung der Website, also wenn Sie sich nicht registrieren oder uns anderweitig Informationen übermitteln, erheben wir nur die personenbezogenen Daten, die Ihr Browser an unseren Server übermittelt. Wenn Sie unsere Website betrachten möchten, erheben wir die folgenden Daten, die für uns technisch erforderlich sind, um Ihnen unsere Website anzuzeigen und die Stabilität und Sicherheit zu gewährleisten (Rechtsgrundlage ist Art. 6 Abs. 1 S. 1 lit. f EU-DSGVO):
-+ IP-Adresse
 + Datum und Uhrzeit der Anfrage
 + Zeitzonendifferenz zur Greenwich Mean Time (GMT)
 + Inhalt der Anforderung (konkrete Seite)
 + Zugriffsstatus/HTTP-Statuscode
 + jeweils übertragene Datenmenge
 + Website, von der die Anforderung kommt
-+ Browser
-+ Betriebssystem und dessen Oberfläche
 + Sprache und Version der Browsersoftware.
 
 Github, Inc. erfasst als Betreiber des Webservers folgende Daten:
